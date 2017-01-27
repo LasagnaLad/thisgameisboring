@@ -1,9 +1,10 @@
 # thisgameisboring
 
-print("Hello, Welcome to a boring text-based game!  Don't play this unless you want to be bored! Are you ready to get started? (please type 'yes' or 'no')")
+print("Hello, Welcome to Spooky Manor! Are you ready to get started? (please type 'yes' or 'no')")
 print()
 answer=str(input())
 discovery_items=['a lighter', 'a gun', 'a journal with the year 1953 on the cover', 'a can of food', 'a cell phone', 'a cell phone battery', 'a shoe', 'a wedding ring', 'a newspaper', 'a rusty old sword', 'a pen', 'a book on linguistics and crytography']
+personal_inventory=[0,0,0,0,0,0,0,0,0,0,0,0]
 if answer=="yes":
     print()
     print("Alright, let's go!")
@@ -11,17 +12,40 @@ if answer=="yes":
     print("What's your name, stranger?")
     name = str(input())
     print("Well... Nice to meet you, " + name + "!")
-    print("Here's the problem... you're stuck somewhere in or around a house.  It's a large three story house.  Unfortunately, you don't know which floor you're on right now and the only way you can tell which room you are in is by looking at the room number (rooms 1-15).  What room number is showing on the door?")
+    print()
+    print("Here's the problem... you're stuck somewhere in or around a house.  It's a large three story house that you are completely unfamiliar with.  Unfortunately, you don't know which floor you're on, and the only way you can tell which room you are in is by looking at the room number (rooms 1-15).  What room number is showing on the door?")
     print()
     room=int(input())
     if room==1:
       print("You are in the first floor bathroom.  It's old.  There is a toilet, shower/bath, and a vanity with a sink in this room.")
+      room_1_list=['toilet', 'shower/bath', 'vanity', 'sink']
+      print("Would you like to look around this room?")
+      search=str(input())
+      if search=="yes":
+        print("What would you like to search?")
+        print(room_1_list)
+        search_room=str(input())
+        if search_room==room_1_list[0]:
+          print("You search the toilet.  Gross.  You lift the lid off of the back and find nothing but disappointment in there.")
+        elif search_room==room_1_list[1]:
+          print("You search the shower/bath area.  You know there wouldn't be much in there, because there wouldn't be very many places to hide anything.")
+        elif search_room==room_1_list[2]:
+          print("You search the vanity and find that most of the drawers are sealed shut.  One of them is slightly ajar.  Would you like to open this drawer?")
+          vanity_drawer=str(input())
+          if vanity_drawer=="yes":
+            print("You found " + discovery_items[7] + ".  It seems odd that someone would leave a woman's wedding ring with a large diamond in the vanity like that... did something happen to cause someone to leave this wedding ring in the drawer?")
+          else:
+              print("Alright, but you could have found something cool!")
+        else: 
+          print("That wasn't something you could investigate in this room!")
+      else:
+        print("Why wouldn't you want to have a look around?!  You don't know why you're in this room!")
     elif room==2:
       print("You are in the kitchen on the first floor.  The kitchen features a large brick oven, a sink, a 4 burner gas stove, an old white fridge, and a table set for 3 with a candle lit in the middle.")
     elif room==3: 
       print("You are in the library on the first floor.  There are several books on the shelves, but most look to be so old that they would fall apart when so much as touched.")
     elif room==4:
-      print("You are in the foyer on the first floor.  This is a wide open room with nothing but a lamp in the corner, 2 wicker chairs, and an endtable in the middle of the chairs.")
+      print("You are in the foyer on the first floor.  This is a wide open room with nothing but a lamp in the corner, 2 wicker chairs, and an end table in the middle of the chairs.")
     elif room==5:
       print("You are on the first floor stair landing, at the end of a long hallway.  The hallway seems to be decorated with pictures from long ago.")
     elif room==6:
